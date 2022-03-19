@@ -2,14 +2,21 @@ package com;
 
 public class Hotel {
     String name;
-    double ratesForRegularCustomerDuringWeekDays;
+    double rates;
 
     /*
     Hotel constructor to add name and rates for regular customer
      */
     public Hotel(String name, double ratesForRegularCustomerDuringWeekDays){
         this.name = name;
-        this.ratesForRegularCustomerDuringWeekDays = ratesForRegularCustomerDuringWeekDays;
+        this.rates = ratesForRegularCustomerDuringWeekDays;
     }
 
+    public double getRates() {
+        return rates;
+    }
+
+    public String getName() {
+        return name;
+    }
 }
