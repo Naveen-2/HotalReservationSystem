@@ -1,9 +1,13 @@
 package com;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Hotel {
     String name;
     double weekdayRates;
     double weekendRates;
+    List<Double> userRatings = new ArrayList<>();
 
     /*
     Hotel constructor to add name and rates for regular customer
@@ -34,4 +38,12 @@ public class Hotel {
     public double getWeekendRates() {
         return weekendRates;
     }
+
+    /*
+    setUserRatings - setter to set user ratings for the hotel
+     */
+    public void setUserRatings(double userRatings) {
+        this.userRatings.add(userRatings);
+    }
+
 }

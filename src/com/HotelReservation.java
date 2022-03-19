@@ -89,11 +89,25 @@ public class HotelReservation {
     }
 
     /**
+     *
+     */
+    public void printHotelsList(){
+        if (hotelList.isEmpty()){
+            System.out.println("Hotel list empty. Please add hotels.");
+        } else {
+            System.out.println("Available hotels: ");
+            for (Hotel hotel : hotelList) {
+                System.out.println("Hotel: " + hotel.name);
+            }
+        }
+    }
+
+    /**
      * printBookedHotels - method to print booked hotels
      */
     public void printBookedHotels(){
         if(hotelList.isEmpty()){
-            System.out.println("Add at least one hotel before requesting to print.");
+            System.out.println("Hotels list empty. Please add hotels.");
         } else {
             if(bookedHotel.isEmpty()){
                 System.out.println("Hotels not booked yet. Enter choice 2 to find and book cheapest hotels.");
@@ -116,6 +130,21 @@ public class HotelReservation {
 
         System.out.println("Total rate for the entered dates: $" + totalBookingRate);
 
+    }
+
+
+    public void addUserRatings(){
+        printHotelsList();
+        if(!hotelList.isEmpty()) {
+            String hotelName = ScannerUtil.getString("Enter hotel name to give ratings: ");
+
+            for (Hotel hotel : hotelList) {
+                if (hotelName.equalsIgnoreCase(hotel.name)) {
+                    hotel.setUserRatings(ScannerUtil.getDouble("Enter ratings for the selected hotel: "));
+                    break;
+                }
+            }
+        }
     }
 
 }
