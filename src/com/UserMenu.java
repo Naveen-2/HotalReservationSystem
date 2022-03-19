@@ -10,7 +10,7 @@ public class UserMenu {
      * @return users selection from the menu is returned
      */
     public int showMainMenu() {
-        System.out.println("Main Menu:\n 1. Add Hotel\n 2. Find Cheap Hotel");
+        System.out.println("Main Menu:\n 1. Add Hotel\n 2. Find Cheap Hotel\n 3. Print Booked Hotel");
         System.out.print("Enter your choice: ");
         return input.nextInt();
     }

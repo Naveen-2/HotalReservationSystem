@@ -1,16 +1,20 @@
 package com;
 
+import org.junit.jupiter.api.Test;
+
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoField;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class HotelReservationTest {
-
+    HotelReservation hotelReservation = new HotelReservation();
     List<Hotel> hotelList = new ArrayList<>();
 
     @org.junit.jupiter.api.Test
@@ -63,5 +67,7 @@ class HotelReservationTest {
         DayOfWeek day = DayOfWeek.of(date.get(ChronoField.DAY_OF_WEEK));
         return day == DayOfWeek.SUNDAY || day == DayOfWeek.SATURDAY;
     }
+
+
 
 }

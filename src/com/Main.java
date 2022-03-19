@@ -1,7 +1,5 @@
 package com;
 
-import java.time.LocalDate;
-
 /**
  * Class with main method
  *
@@ -34,7 +32,8 @@ public class Main {
             int choice = userMenu.showMainMenu();
             switch (choice) {
                 case 1 -> hotelReservation.addNewHotel();
-                case 2 -> hotelReservation.findCheapestHotel(LocalDate.of(2021, 1, 2));
+                case 2 -> hotelReservation.findCheapestHotel(hotelReservation.getBookingDates());
+                case 3 -> hotelReservation.printBookedHotels();
                 default -> System.out.println("Invalid Choice.");
 
             }
