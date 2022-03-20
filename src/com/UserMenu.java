@@ -16,7 +16,8 @@ public class UserMenu {
                  2. Find Cheapest Hotel
                  3. Print Booked Hotel
                  4. Add User Ratings for a hotel
-                 5. Find Cheapest best rated hotel""");
+                 5. Find Cheapest best rated hotel
+                 6. Find Best rated hotel""");
         System.out.print("Enter your choice: ");
         return input.nextInt();
     }

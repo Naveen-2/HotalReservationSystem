@@ -172,9 +172,11 @@ public class HotelReservation {
                     totalCharge += sortedHotelList.get(0).getWeekdayRates();
                 }
             }
+            System.out.println("Best rated hotel: " + bestRatedHotel +
+                    "\nTotal Charge: $" + totalCharge);
+        } else {
+            System.out.println("Please add a hotel to list first.");
         }
-        System.out.println("Cheapest best rated hotel: " + bestRatedHotel +
-                            "\nTotal Charge: $" + totalCharge);
     }
 
     public void clearListIfHotelBooked(){
@@ -184,4 +186,30 @@ public class HotelReservation {
     }
 
 
+    public void findBestRatedHotel() {
+        List<Hotel> sortedHotelList;
+        String bestRatedHotel = "";
+        double totalCharge = 0.0;
+        if (!hotelList.isEmpty()){
+            LocalDate[] bookingDates = getBookingDates();
+            if (!bookedHotel.isEmpty()) {
+                clearListIfHotelBooked();
+            }
+            sortedHotelList = hotelList.stream()
+                    .sorted(Comparator.comparingDouble(Hotel::getUserRatings)).toList();
+            bestRatedHotel = sortedHotelList.get(0).name;
+            for (LocalDate bookingDate : bookingDates) {
+                if (isWeekend(bookingDate)) {
+                    totalCharge += sortedHotelList.get(0).getWeekendRates();
+                } else {
+                    totalCharge += sortedHotelList.get(0).getWeekdayRates();
+                }
+            }
+            System.out.println("Best rated hotel: " + bestRatedHotel +
+                    "\nTotal Charge: $" + totalCharge);
+        } else {
+            System.out.println("Please add a hotel to list first.");
+        }
+
+    }
 }
