@@ -39,21 +39,21 @@ class HotelReservationTest {
             Sorted based on weekend rates in ascending order and prints first element
              */
             sortedHotelList = hotelList.stream()
-                    .sorted(Comparator.comparingDouble(Hotel::getWeekendRates)).toList();
+                    .sorted(Comparator.comparingDouble(Hotel::getWeekendRatesRegular)).toList();
             System.out.println("Cheapest Hotel: " + sortedHotelList.get(0).name +
-                    "\nCost: " + sortedHotelList.get(0).getWeekendRates());
+                    "\nCost: " + sortedHotelList.get(0).getWeekendRatesRegular());
             assertEquals("Bridgewood",sortedHotelList.get(0).getName());
-            assertEquals(50.0,sortedHotelList.get(0).getWeekendRates());
+            assertEquals(50.0,sortedHotelList.get(0).getWeekendRatesRegular());
         } else {
             /*
             Sorted based on weekday rates in ascending order and prints first element
              */
             sortedHotelList = hotelList.stream()
-                    .sorted(Comparator.comparingDouble(Hotel::getWeekdayRates)).toList();
+                    .sorted(Comparator.comparingDouble(Hotel::getWeekdayRatesRegular)).toList();
             System.out.println("Cheapest Hotel: " + sortedHotelList.get(sortedHotelList.size()-1).name +
-                    "\nCost: " + sortedHotelList.get(sortedHotelList.size()-1).getWeekdayRates());
+                    "\nCost: " + sortedHotelList.get(sortedHotelList.size()-1).getWeekdayRatesRegular());
             assertEquals("Lakewood",sortedHotelList.get(0).getName());
-            assertEquals(110.0,sortedHotelList.get(0).getWeekdayRates());
+            assertEquals(110.0,sortedHotelList.get(0).getWeekdayRatesRegular());
         }
 
 
