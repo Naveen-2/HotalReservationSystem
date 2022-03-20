@@ -15,10 +15,13 @@ class HotelReservationTest {
     @org.junit.jupiter.api.Test
     void addNewHotel() {
         Hotel hotel1 = new Hotel("Lakewood", 110, 90);
+        hotel1.setUserRatings(3);
         hotelList.add(hotel1);
         Hotel hotel2 = new Hotel("Bridgewood", 160, 50);
+        hotel2.setUserRatings(4);
         hotelList.add(hotel2);
         Hotel hotel3 = new Hotel("Ridgewood", 220, 150);
+        hotel3.setUserRatings(5);
         hotelList.add(hotel3);
     }
 

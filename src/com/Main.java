@@ -35,6 +35,7 @@ public class Main {
                 case 2 -> hotelReservation.findCheapestHotel(hotelReservation.getBookingDates());
                 case 3 -> hotelReservation.printBookedHotels();
                 case 4 -> hotelReservation.addUserRatings();
+                case 5 -> hotelReservation.findCheapestBestRatedHotel();
                 default -> System.out.println("Invalid Choice.");
 
             }
